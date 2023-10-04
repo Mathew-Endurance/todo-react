@@ -1,10 +1,16 @@
 import { Box, TextField, Typography } from '@mui/material'
 import React, {FC, ReactElement} from 'react'
+import { ITextField } from '../interfaces/ITextField'
+import PropTypes from 'prop-types'
 
 
-
-export const TaskTitleField : FC = (): ReactElement =>{
-    return(
+export const TaskTitleField : FC <ITextField>= (props): ReactElement =>{
+   
+	const {
+		disabled=false,
+		onChange=(e)=>console.log(e)
+	} = props
+	return(
         <TextField
         	id='title'
 					label = 'Task Title'
@@ -13,7 +19,14 @@ export const TaskTitleField : FC = (): ReactElement =>{
 					size='small'
 					name='title'
 					fullWidth
+					disabled={disabled}
+					onChange={onChange}
 				 />
     )
 
+}
+
+TaskTitleField.propTypes = {
+	onChange :  PropTypes.func,
+	disabled : PropTypes.bool
 }
