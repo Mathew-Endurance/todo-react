@@ -2,6 +2,7 @@ import { Box, Stack, Typography } from '@mui/material'
 import React, {FC, ReactElement} from 'react'
 import { TaskTitleField } from './_taskTitleField'
 import { TaskDiscriptionField } from './_taskDiscriptionField'
+import { TaskDateField } from './_taskDateField'
 
 
 export const CreateTaskForm : FC = (): ReactElement =>{
@@ -16,13 +17,9 @@ export const CreateTaskForm : FC = (): ReactElement =>{
         >
             <Typography variant='h6' component='h2' mb={2}>Create A Task</Typography>
 					<Stack  sx={{width:'100%'}} spacing={2}>
-						{/* title */}
 						<TaskTitleField/>
-
-						{/* discription */}
-						<TaskDiscriptionField/>
-
-						{/* date field */}
+                        <TaskDiscriptionField/>
+                        <TaskDateField/>
 
 						{/* staus field  and priority*/}
 
